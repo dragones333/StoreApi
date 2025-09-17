@@ -12,6 +12,7 @@ public class WeatherForecastController : ControllerBase
     };
 
     private readonly ILogger<WeatherForecastController> _logger;
+    StoreDbContext dbContext;
 
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {

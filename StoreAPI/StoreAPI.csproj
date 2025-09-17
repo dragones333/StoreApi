@@ -9,12 +9,35 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.8" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="9.0.3" />
+        <PackageReference Include="Wkhtmltopdf.NetCore" Version="5.0.2-preview" />
     </ItemGroup>
 
     <ItemGroup>
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="Rotativa\Linux\wkhtmltopdf" CopyToOutputDirectory="PreserveNewest" />
+
+        <None Include="Rotativa\Mac\wkhtmltopdf" CopyToOutputDirectory="PreserveNewest" />
+
+        <None Include="Rotativa\Windows\wkhtmltopdf.exe" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\StoreApi.Models2\StoreApi.Models2.csproj" />
     </ItemGroup>
 
 </Project>

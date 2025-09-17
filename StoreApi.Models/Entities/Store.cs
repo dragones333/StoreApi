@@ -1,1 +1,2 @@
-namespace StoreAPI.Models.Entities
+namespace StoreAPI.Models.Entities;
+
