@@ -1,2 +1,0 @@
-namespace StoreAPI.Models.Entities;
-

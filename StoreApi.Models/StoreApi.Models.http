@@ -1,6 +1,0 @@
-@StoreApi.Models_HostAddress = http://localhost:5138
-
-GET {{StoreApi.Models_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

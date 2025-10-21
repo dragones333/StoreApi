@@ -18,13 +18,29 @@ namespace StoreAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+        public async Task<ActionResult<List<Order>>> GetOrders()
         {
             var orders = await _context.Order
-                .Include(o =>o.SystemUser)
+                .Include(o=>o.SystemUser)
+                .Select(o=> new
+                { 
+                    Id = o.Id,
+                    Total = o.Total,
+                    CreatedAt = o.CreateAt,
+                    User = new UserDTO
+                    {
+                        Id= o.SystemUser.Id,
+                        Email = o.SystemUser.Email,
+                        FirstName = o.SystemUser.FirstName,
+                        LastName = o.SystemUser.LastName,
+                    }
+                })
                 .ToListAsync();
+    
+            // _context.Order.FirstOrDefaultAsync(o=>o.Id == id);
             return Ok(orders);
         }
+
         
 
         [HttpPost]
